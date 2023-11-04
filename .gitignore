@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 .sass-cache/
-**/.css.map
+**css.map
