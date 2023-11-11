@@ -2,6 +2,8 @@
 
 .feature {
   border: 1px solid darkorange;
+  display: grid;
+  gap: u.rem(24);
 
   &__image {
   }
@@ -9,9 +11,6 @@
   &__headline {
     font-size: var(--f-xl);
     font-weight: 800;
-  }
-
-  &__description {
   }
 
   &__button {
@@ -23,5 +22,6 @@
     text-transform: uppercase;
     padding: u.rem(12) u.rem(32);
     letter-spacing: 0.31em;
+    justify-self: start;
   }
 }

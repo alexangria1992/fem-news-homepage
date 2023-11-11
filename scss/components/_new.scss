@@ -23,10 +23,12 @@
   }
 
   &__headline {
+    display: inline-block;
     font-size: u.rem(20);
     font-weight: 800;
     margin-block-end: u.rem(8);
     color: var(--c-white);
+    display: inline-block;
   }
 
   &__description {
