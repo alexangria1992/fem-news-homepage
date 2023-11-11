@@ -3,6 +3,13 @@
 .blog {
   display: grid;
   gap: u.rem(30);
+  border: 1px solid darkgreen;
+
+  @media (width >= u.em(1110)) {
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    padding-block-start: u.rem(40);
+  }
 
   &__item {
     display: grid;
