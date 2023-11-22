@@ -37,6 +37,10 @@
       font-weight: 800;
       line-height: 1.1;
       font-size: var(--f-xs);
+
+      &:hover {
+        color: var(--c-red);
+      }
     }
   }
 

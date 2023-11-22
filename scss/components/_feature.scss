@@ -40,5 +40,9 @@
     padding: u.rem(12) u.rem(32);
     letter-spacing: 0.31em;
     justify-self: start;
+
+    &:hover {
+      background-color: var(--c-blue);
+    }
   }
 }

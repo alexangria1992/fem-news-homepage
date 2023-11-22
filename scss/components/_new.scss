@@ -34,6 +34,10 @@
     margin-block-end: u.rem(8);
     color: var(--c-white);
     display: inline-block;
+
+    &:hover {
+      color: var(--c-yellow);
+    }
   }
 
   &__description {
