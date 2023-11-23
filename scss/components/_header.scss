@@ -1,8 +1,11 @@
 @use "../util/" as u;
 
 .header {
+  display: flex;
+  padding-block: u.rem(30);
+  justify-content: space-between;
+
   @media (width >= u.em(1110)) {
-    display: flex;
     justify-content: space-between;
     padding-block: u.rem(90) u.rem(55);
   }
@@ -18,9 +21,13 @@
   }
 
   &__links {
-    @media (width >= u.em(1110)) {
-      display: flex;
-      gap: u.rem(40);
+    flex-direction: row;
+    gap: u.rem(40);
+    display: flex;
+
+    @media (width < u.em(1110)) {
+      flex-direction: column;
+      gap: u.rem(24);
     }
   }
 
