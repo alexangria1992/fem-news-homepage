@@ -1,21 +1,49 @@
 import "./scss/style.scss";
-import javascriptLogo from "./javascript.svg";
-import { setupCounter } from "./counter.js";
 
-document.querySelector("#app").innerHTML = `
-  <div>
-   
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`;
+const body = document.querySelector("body");
+const btnOpen = document.querySelector("#btnOpen");
+const btnClose = document.querySelector("#btnClose");
 
-setupCounter(document.querySelector("#counter"));
+const media = window.matchMedia("(width < 69.375em)");
+const navContent = document.querySelector(".nav__content");
+const navOverlay = document.querySelector(".nav__overlay");
+
+function openMobileMenu() {
+  console.log("open menu");
+
+  btnOpen.setAttribute("aria-expanded", "true");
+  body.classList.add("noscroll");
+}
+
+function closeMobileMenu() {
+  console.log("close menu");
+
+  btnOpen.setAttribute("aria-expanded", "false");
+  body.classList.remove("noscroll");
+}
+
+function setUpNav(e) {
+  if (e.matches) {
+    // is mobile
+    console.log("is mobile");
+
+    setTimeout(() => {
+      navContent.style.display = "block";
+      navOverlay.style.display = "block";
+    }, 500);
+  } else {
+    //is desktop
+    console.log("is desktop");
+    navContent.style.display = "";
+  }
+}
+
+setUpNav(media);
+btnOpen.addEventListener("click", openMobileMenu);
+
+btnClose.addEventListener("click", closeMobileMenu);
+
+media.addEventListener("change", function (e) {
+  // console.log("window.matchMedia change = " + e.matches);
+  setUpNav(e);
+});
